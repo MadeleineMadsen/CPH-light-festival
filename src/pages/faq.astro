@@ -15,11 +15,22 @@ import "../style/style.css"
     <a href="#" class="button glow-button">Glow Button</a>
 
 
-    <button type="button" class="collapsible">Open FAQ</button>
+    <button type="button" class="collapsible">Open 1</button>
     <div class="content">
-      <p>Lorem ipsum...</p>
+      <p>Lad os skrive noget spændende her</p>
     </div>
-
+    <button type="button" class="collapsible">Open 2</button>
+    <div class="content">
+      <p>Og så noget semi spændende her</p>
+    </div>
+    <button type="button" class="collapsible">Open 3</button>
+    <div class="content">
+      <p>Her kan der stå noget om parkering eller transport</p>
+    </div>
+    <button type="button" class="collapsible">Open 4</button>
+    <div class="content">
+      <p>Og her kan vi skrive noget nedern for folk læser ikke hertil.</p><p>Nu skal vi lige finde på noget Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime, similique rerum molestias odio qui architecto laudantium eligendi fugit expedita minus nobis consequuntur laboriosam voluptatum magnam ad esse, odit quia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error consequuntur corrupti molestiae odio non fugit amet, sed tenetur veniam perferendis quae sapiente obcaecati nam? Facilis at excepturi vero odit! Similique. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor ullam est excepturi, enim voluptatum voluptas doloribus incidunt, voluptate autem voluptatibus debitis exercitationem ratione molestiae, dolore veniam commodi earum aperiam soluta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cum velit vel rerum, fugiat harum maxime eius deleniti minima perferendis corrupti repudiandae quod sint quae odit placeat tempora animi voluptate!</p>
+    </div>
 
   </body>
 </html>
@@ -27,43 +38,46 @@ import "../style/style.css"
 <style>
     /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
-  color: #444;
+    background-color: #63a5ec;
+  color: #f0f0f0;
   cursor: pointer;
   padding: 18px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 20px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #ccc;
+  background-color: #3381d4;
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
+    max-height: 0;
   padding: 0 18px;
-  display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #63a5ec;
+  transition: max-height 0.3s ease-in-out;
+}
+/* Show the content when the .active class is applied */
+.active + .content {
+  max-height: 500px; /* Adjust this value based on your content's maximum height */
+  
 }
 </style>
 <script>
-    var coll = document.getElementsByClassName("collapsible");
-var i;
+    // Vælg collapsible
+    const coll = document.querySelectorAll(".collapsible");
 
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
+    // Når man klikker på hvert element, funktionen bliver aktiv og laver "toggle"
+coll.forEach(element=>{
+    element.addEventListener("click", function() {
+        element.classList.toggle("active");
+    })
+})
+
 </script>
