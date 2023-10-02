@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hej</h1>
+    <a href="#" class="button glow-button">Glow Button</a>
+  </body>
+</html>
+
+<style>
+.button {
+	text-decoration: none;
+	color: #f83944;
+	padding: 10px 15px;
+	border-radius: 10px;
+	transition: all 0.2s ease-in-out;
+  }
+  
+  .glow-button {
+	background-color: transparent;
+	color: #f83944;
+	border-radius: 10px;
+	transition: background-color 0.2s ease-in-out;
+  }
+  
+  .glow-button:hover {
+	background-color: #3381d4;
+	color: #f0f0f0;
+	border-radius: 10px;
+	animation-name: glow;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	text-shadow: 0 0 20px rgba(51, 129, 212, 1);
+	box-shadow: 0 0 20px rgba(51, 129, 212, 1);
+  }
+  
+  @keyframes glow {
+	0% {
+	  filter: drop-shadow(0 0 35px#3380d4);
+	}
+	100% {
+	  filter: drop-shadow(0 0 35px #3380d4);
+	}
+  }
+  
+</style>
