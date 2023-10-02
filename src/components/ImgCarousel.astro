@@ -1,0 +1,149 @@
+<!-- Html -->
+
+<section class="image-carousel">
+    <div class="carousel-container">
+      <div class="carousel-track">
+
+        <!-- Billeder til karrusel -->
+        <div class="carousel-slide" id="slide1">
+          <img src="/img/Acid_Sun.jpg" alt="Image 1" />
+        </div>
+
+        <div class="carousel-slide" id="slide2">
+          <img src="/img/Arachne.jpg" alt="Image 2"/>
+        </div>
+
+        <div class="carousel-slide" id="slide2">
+            <img src="/img/Blue_Earth.jpg" alt="Image 3"/>
+          </div>
+
+          <div class="carousel-slide" id="slide2">
+            <img src="/img/Blue_Earth2.jpg" alt="Image 4"/>
+          </div>
+
+          <div class="carousel-slide" id="slide2">
+            <img src="/img/Dreamcatcher.jpg" alt="Image 5"/>
+          </div>
+
+          <div class="carousel-slide" id="slide2">
+            <img src="/img/Hook-Up.jpg" alt="Image 6"/>
+          </div>
+
+          <div class="carousel-slide" id="slide2">
+            <img src="/img/Love_Train.jpg" alt="Image 7"/>
+          </div>
+
+          <div class="carousel-slide" id="slide2">
+            <img src="/img/Terra.jpg" alt="Image 8"/>
+          </div>
+
+          <div class="carousel-slide" id="slide2">
+            <img src="/img/Waves.jpg" alt="Image 9"/>
+          </div>
+
+          <div class="carousel-slide" id="slide2">
+            <img src="/img/WHAT_IF.jpg" alt="Image 10"/>
+          </div>
+      </div>
+    </div>
+
+    <button class="prev">Forrige</button>
+    <button class="next">Næste</button>
+  </section>
+
+  <!-- Style -->
+  <style>
+img {
+    max-width: 100%;
+}
+
+.image-carousel {
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 22.5%;
+  padding: 10px;
+}
+
+button {
+    background-color: lightblue;
+    border: none;
+    color:white;
+}
+button:disabled {
+    background-color: hotpink;
+}
+</style>
+
+
+<!-- JavaScript -->
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM content loaded');
+
+  const track = document.querySelector('.carousel-track');
+  console.log(track);
+  const slides = document.querySelectorAll('.carousel-slide');
+
+  let index = 0;
+
+  function updateSlide() {
+    track.style.transform = `translateX(-${index * 25}%)`;
+    // Prev knappen bliver disabled, når slides er slut
+    if(index == 0){
+        document.querySelector(".prev").disabled=true
+    } else {
+        document.querySelector(".prev").disabled=false
+    }
+
+    // Next knappen bliver disabled, når slides er slut
+    if(index == slides.length -4){
+        document.querySelector(".next").disabled=true
+    } else {
+        document.querySelector(".next").disabled=false
+    }
+  }
+
+  updateSlide()
+
+//   Næste og forrige slide
+  function nextSlide() {
+    console.log(index, slides.length)
+    if(index+1 < slides.length-3){
+        index++;
+    }
+
+    updateSlide();
+  }
+
+  function prevSlide() {
+    if(index-1 >= 0){
+        index--
+    }
+
+    updateSlide();
+  }
+
+//   Funktionerne næste og forrige knapper
+  document.querySelector(".next").addEventListener("click", nextSlide)
+
+  document.querySelector(".prev").addEventListener("click", prevSlide)
+});
+</script>
+  
+
+
+  
