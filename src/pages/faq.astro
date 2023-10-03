@@ -18,9 +18,10 @@ import "../style/style.css"
 
 
 <div class="blur-box">
+    <div class="blur-content">
     <h1>FAQ</h1>
-    <h3>something something</h3>
-</div>
+    <p>Jeg har brug for tekst så jeg skriver en sang: Solen er rød, natten er blå, jeg står på stylter, og kan ikke spå. Min nabo larmer dag og nat, jeg råber at jeg hader deres kat. En tur udenfor er det bedste jeg ved, katten løber rundt, skal den lige køres ned? Gåturen blev til løb, politiet finder mig ikke, nu leder naboen efter katten, råber "hvor er Rikke?"</p>
+</div></div>
 
 
 
@@ -81,20 +82,17 @@ import "../style/style.css"
 </html>
 
 <style>
-body {
-    background-color: #151515;
-    margin: 0;
-    padding: 0;
-}
-
 .blur-box {
     background-color: hsla(0, 0%, 85%, 0.46);
-    padding: 10px;
+    padding: 40px;
     margin: 0;
 }
 .container-box {
     background-color: #3B507C;
 margin: 10cqw;
+padding-top: 6px;
+padding-bottom: 6px;
+
 }
 .collapsible .icon::before {
   content: "+";
@@ -127,21 +125,22 @@ justify-content: space-between;
   transition: background-color 0.3s ease-in-out;
   border: solid 1px #000000;
 }
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.active, .collapsible:hover {
-  background-color: #0E91EF;
+.collapsible:hover, .active {
+color: #ffffff;
+  animation-name: glow;
+  animation-iteration-count: infinite;
+  box-shadow: 0 0 15px rgb(51, 129, 212);
+  text-shadow: 0 0 5px #f0f0f0;
+  background-color: rgba(51, 129, 212, 0.5);
+  transition: background-color 0.15s ease-in-out;
 }
-
-/* Style the collapsible content. Note: hidden by default */
 .content {
-    max-height: 0;
+max-height: 0;
   padding: 0 18px;
   overflow: hidden;
   background-color: #0E91EF;
   transition: max-height 0.3s ease-in-out;
 }
-/* Show the content when the .active class is applied */
 .active + .content {
   max-height: 500px; /* Adjust this value based on your content's maximum height */
   border: solid 1px #000000;
@@ -160,6 +159,8 @@ justify-content: space-between;
 coll.forEach(element=>{
     element.addEventListener("click", function() {
         element.classList.toggle("active");
+        
     })
+
 })
 </script>
