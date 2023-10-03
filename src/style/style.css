@@ -1,8 +1,40 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h3,
+h4,
+p {
+  color: #e1e2e6;
+}
+h2 {
+  padding-top: 20px;
+  padding-left: 10px;
+  color: #e1e2e6;
+}
+h4 {
+  padding-top: 10px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+footer {
+  margin: 10cqw;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+footer h3 {
+  font-size: 22px;
+}
+
 .button {
   text-decoration: none;
   color: #f0f0f0;
-  padding: 10px 15px;
-  border-radius: 10px;
+  padding: 2px 6px;
   transition: all 0.2s ease-in-out;
 }
 
@@ -10,18 +42,17 @@
   background-color: transparent;
   color: #f0f0f0;
   border-radius: 10px;
-  transition: background-color 0.2s ease-in-out;
 }
 
 .glow-button:hover {
-  background-color: #3381d4;
-  color: #f0f0f0;
+  color: #ffffff;
   border-radius: 10px;
   animation-name: glow;
   animation-duration: 2s;
   animation-iteration-count: infinite;
-  text-shadow: 0 0 20px rgba(51, 129, 212, 1);
-  box-shadow: 0 0 20px rgba(51, 129, 212, 1);
+  box-shadow: 0 0 15px rgb(51, 129, 212);
+  text-shadow: 0 0 5px #f0f0f0;
+  background-color: rgba(51, 129, 212, 0.5);
 }
 
 @keyframes glow {
@@ -30,5 +61,32 @@
   }
   100% {
     filter: drop-shadow(0 0 35px #3380d4);
+  }
+}
+
+@media (min-width: 700px) {
+  footer {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2cqw;
+  }
+  footer p {
+    line-height: 3;
+    padding-bottom: 35px;
+  }
+  footer h3 {
+    padding-bottom: 15px;
+    font-size: 28px;
+    margin-top: 0;
+  }
+  footer h4 {
+    padding-top: 0;
+    margin-top: 0;
+  }
+  .footer {
+    font-size: 28px;
+    padding-top: 0;
+    padding-bottom: 15px;
+    margin-top: 0;
   }
 }

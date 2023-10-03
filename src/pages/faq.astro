@@ -15,44 +15,122 @@ import "../style/style.css"
     <a href="#" class="button glow-button">Glow Button</a>
 
 
-    <button type="button" class="collapsible">Open 1</button>
+
+
+<div class="blur-box">
+    <h1>FAQ</h1>
+    <h3>something something</h3>
+</div>
+
+
+
+
+<div class="container-box">
+    <h2>Overskrift her</h2>
+    <!-- Kode til FAQ dropdown -->
+    <div class="container">
+    <button type="button" class="collapsible">Open 1<span class="icon"></span></button>
     <div class="content">
       <p>Lad os skrive noget spændende her</p>
     </div>
-    <button type="button" class="collapsible">Open 2</button>
+    <button type="button" class="collapsible">Open 2<span class="icon"></span></button>
     <div class="content">
       <p>Og så noget semi spændende her</p>
     </div>
-    <button type="button" class="collapsible">Open 3</button>
+    </div>
+    <h2>Overskrift her også</h2>
+    <div class="container">
+    <button type="button" class="collapsible">Open 3<span class="icon"></span></button>
     <div class="content">
       <p>Her kan der stå noget om parkering eller transport</p>
     </div>
-    <button type="button" class="collapsible">Open 4</button>
+    <button type="button" class="collapsible">Open 4<span class="icon"></span></button>
     <div class="content">
-      <p>Og her kan vi skrive noget nedern for folk læser ikke hertil.</p><p>Nu skal vi lige finde på noget Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime, similique rerum molestias odio qui architecto laudantium eligendi fugit expedita minus nobis consequuntur laboriosam voluptatum magnam ad esse, odit quia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error consequuntur corrupti molestiae odio non fugit amet, sed tenetur veniam perferendis quae sapiente obcaecati nam? Facilis at excepturi vero odit! Similique. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor ullam est excepturi, enim voluptatum voluptas doloribus incidunt, voluptate autem voluptatibus debitis exercitationem ratione molestiae, dolore veniam commodi earum aperiam soluta? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam cum velit vel rerum, fugiat harum maxime eius deleniti minima perferendis corrupti repudiandae quod sint quae odit placeat tempora animi voluptate!</p>
+      <p>Og her kan vi skrive noget nedern for folk læser ikke hertil.</p><p>Nu skal vi lige finde på noget Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime, similique rerum molestias odio qui architecto laudantium eligendi fugit expedita minus nobis consequuntur laboriosam voluptatum magnam ad esse, odit quia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error consequuntur corrupti molestiae odio non fugit amet, sed tenetur veniam perferendis quae sapiente obcaecati nam? Facilis at excepturi vero odit! Similique. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor ullam est excepturi, enim voluptatum voluptas doloribus incidunt, voluptate autem voluptatibus debitis exercitationem ratione molestiae, dolore veniam commodi earum aperiam soluta? Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
     </div>
+    </div>
+    <h2>Overskrift her igen</h2>
+    <div class="container">
+    <button type="button" class="collapsible">Open 5<span class="icon"></span></button>
+    <div class="content">
+      <p>Nu kom der en 5´er lige pludselig</p>
+    </div>
+    <button type="button" class="collapsible">Open 6<span class="icon"></span></button>
+    <div class="content">
+      <p>Og her kan vi skrive noget nedern for folk læser ikke hertil.</p><p>Nu skal vi lige finde på noget Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium maxime, similique rerum molestias odio qui architecto laudantium eligendi fugit expedita minus nobis consequuntur laboriosam voluptatum magnam ad esse, odit quia. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error consequuntur corrupti molestiae odio non fugit amet, sed tenetur veniam perferendis quae sapiente obcaecati nam? Facilis at excepturi vero odit! Similique. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor ullam est excepturi, enim voluptatum voluptas doloribus incidunt, voluptate autem voluptatibus debitis exercitationem ratione molestiae, dolore veniam commodi earum aperiam soluta? Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    </div>
+    </div>
+</div>
+
+<footer>
+    <div>
+    <h3>Kontakt</h3>
+    <h4>Mail</h4>
+    <p>info@copenhagenlightfestival.org</p>
+    <h4>Mobil</h4>
+    <p>+45 25556604</p>
+    </div>
+    <div><div class="footer">
+    <h4>Adresse</h4>
+    </div>
+    <p>Toldbodgade 39, 1253 København K</p>
+    </div>
+</footer>
 
   </body>
 </html>
 
 <style>
+body {
+    background-color: #151515;
+    margin: 0;
+    padding: 0;
+}
+
+.blur-box {
+    background-color: hsla(0, 0%, 85%, 0.46);
+    padding: 10px;
+    margin: 0;
+}
+.container-box {
+    background-color: #3B507C;
+margin: 10cqw;
+}
+.collapsible .icon::before {
+  content: "+";
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.collapsible.active .icon::before {
+  content: "-";  
+  margin-right: 10px;
+}
+.container {
+    padding: 20px;
+}
     /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    background-color: #63a5ec;
-  color: #f0f0f0;
+    display: flex;
+justify-content: space-between;
+    background-color: #3B507C;
+  color: #E1E2E6;
   cursor: pointer;
   padding: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
   width: 100%;
   border: none;
   text-align: left;
   outline: none;
   font-size: 20px;
   transition: background-color 0.3s ease-in-out;
+  border: solid 1px #000000;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #3381d4;
+  background-color: #0E91EF;
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -60,13 +138,18 @@ import "../style/style.css"
     max-height: 0;
   padding: 0 18px;
   overflow: hidden;
-  background-color: #63a5ec;
+  background-color: #0E91EF;
   transition: max-height 0.3s ease-in-out;
 }
 /* Show the content when the .active class is applied */
 .active + .content {
   max-height: 500px; /* Adjust this value based on your content's maximum height */
+  border: solid 1px #000000;
   
+}
+.active {
+    border-bottom: none;
+    margin-bottom: 0;
 }
 </style>
 <script>
@@ -79,5 +162,4 @@ coll.forEach(element=>{
         element.classList.toggle("active");
     })
 })
-
 </script>
