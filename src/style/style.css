@@ -23,6 +23,9 @@ h4 {
   line-height: 1.5;
   margin: 0;
   text-align: center;
+  background-color: hsla(0, 0%, 85%, 0.3);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 /* Desktop version */
@@ -32,7 +35,6 @@ h4 {
     justify-content: space-around;
     margin-bottom: 2cqw;
   }
-
   footer p {
     line-height: 3;
     padding-bottom: 35px;
@@ -60,5 +62,5 @@ h4 {
   .splide__slide img {
     width: 100%;
     height: auto;
-    }
   }
+}
