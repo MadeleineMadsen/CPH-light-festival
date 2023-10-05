@@ -69,13 +69,14 @@ footer h3 {
   }
 }
 
-<<<<<<< HEAD
+
 @media (min-width: 700px) {
   footer {
     display: flex;
     justify-content: space-around;
     margin-bottom: 2cqw;
   }
+
   footer p {
     line-height: 3;
     padding-bottom: 35px;
@@ -98,10 +99,11 @@ footer h3 {
     margin-left: 10cqw;
     margin-right: 10cqw;
   }
-=======
+
 /* Billede karrusel */
 .splide__slide img {
   width: 100%;
   height: auto;
->>>>>>> forside
+
+}
 }
