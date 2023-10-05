@@ -73,6 +73,7 @@
       font-size: 20px;
       transition: background-color 0.3s ease-in-out;
       border: solid 1px #000000;
+      border-radius:8px;
     }
     .collapsible:hover, .active {
     color: #ffffff;
@@ -89,11 +90,11 @@
       overflow: hidden;
       background-color: #0E91EF;
       transition: max-height 0.3s ease-in-out;
+      border-radius:8px;
     }
     .active + .content {
       max-height: 500px; /* Adjust this value based on your content's maximum height */
       border: solid 1px #000000;
-      
     }
     .active {
         border-bottom: none;
@@ -107,6 +108,7 @@
         // Når man klikker på hvert element, funktionen bliver aktiv og laver "toggle"
     coll.forEach(element=>{
         element.addEventListener("click", function() {
+          //  setTimeout(()=>{element.classList.toggle("active")},1000)
             element.classList.toggle("active");
             
         })
