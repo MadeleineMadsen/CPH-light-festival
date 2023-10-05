@@ -1,11 +1,10 @@
 @font-face {
   font-family: "Poppins";
-  src: url('/font/Poppins-Regular.ttf') format('truetype');
+  src: url("/font/Poppins-Regular.ttf") format("truetype");
 }
 
-
 body {
-  background-image: url('/img/Baggrund2.webp');
+  background-image: url("/img/Baggrund2.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
