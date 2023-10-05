@@ -64,16 +64,16 @@
       color: #E1E2E6;
       cursor: pointer;
       padding: 18px;
-      margin-top: 4px;
-      margin-bottom: 4px;
+      margin-top: 10px;
       width: 100%;
       border: none;
       text-align: left;
       outline: none;
       font-size: 20px;
       transition: background-color 0.3s ease-in-out;
-      border: solid 1px #000000;
+      border: solid 1px rgb(51, 129, 212);
       border-radius:8px;
+      margin-bottom: 0;
     }
     .collapsible:hover, .active {
     color: #ffffff;
@@ -84,22 +84,26 @@
       background-color: rgba(51, 129, 212, 0.5);
       transition: background-color 0.15s ease-in-out;
     }
+    .collapsible.active {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      margin-bottom: 0;
+    }
     .content {
     max-height: 0;
       padding: 0 18px;
       overflow: hidden;
       background-color: #0E91EF;
       transition: max-height 0.3s ease-in-out;
-      border-radius:8px;
+      border-radius: 8px;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
     }
     .active + .content {
       max-height: 500px; /* Adjust this value based on your content's maximum height */
-      border: solid 1px #000000;
+      border: solid 1px rgb(51, 129, 212);
     }
-    .active {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
+
     </style>
     <script>
         // Vælg collapsible
