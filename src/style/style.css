@@ -68,8 +68,7 @@ footer h3 {
     filter: drop-shadow(0 0 35px #3380d4);
   }
 }
-
-<<<<<<< HEAD
+/* Desktop version */
 @media (min-width: 700px) {
   footer {
     display: flex;
@@ -98,10 +97,9 @@ footer h3 {
     margin-left: 10cqw;
     margin-right: 10cqw;
   }
-=======
-/* Billede karrusel */
-.splide__slide img {
-  width: 100%;
-  height: auto;
->>>>>>> forside
+  /* Billede karrusel */
+  .splide__slide img {
+    width: 100%;
+    height: auto;
+  }
 }
