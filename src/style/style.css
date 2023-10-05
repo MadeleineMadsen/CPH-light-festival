@@ -1,5 +1,8 @@
 body {
-  background-color: #151515; /*baggrundsfarve inden billede kommer på*/
+  background-image: url('/img/Baggrund2.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   margin: 0;
   padding: 0;
 }
@@ -102,4 +105,5 @@ footer h3 {
     width: 100%;
     height: auto;
   }
+
 }
