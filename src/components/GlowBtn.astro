@@ -1,37 +1,35 @@
-<!-- Kode til glow button -->
-<!-- <a href="#" class="button glow-button">Glow Button</a> -->
-
+<!-- Kode til glow button --><!-- <a href="#" class="button glow-button">Glow Button</a> -->
 <style>
-    .button {
-  text-decoration: none;
-  color: #f0f0f0;
-  padding: 2px 6px;
-  transition: all 0.2s ease-in-out;
-}
-
-.glow-button {
-  background-color: transparent;
-  color: #f0f0f0;
-  border-radius: 10px;
-}
-
-.glow-button:hover {
-  color: #ffffff;
-  border-radius: 10px;
-  animation-name: glow;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-  box-shadow: 0 0 15px rgb(51, 129, 212);
-  text-shadow: 0 0 5px #f0f0f0;
-  background-color: rgba(51, 129, 212, 0.5);
-}
-
-@keyframes glow {
-  0% {
-    filter: drop-shadow(0 0 35px#3380d4);
+  .button {
+    text-decoration: none;
+    color: #f0f0f0;
+    padding: 2px 6px;
+    transition: all 0.2s ease-in-out;
   }
-  100% {
-    filter: drop-shadow(0 0 35px #3380d4);
+
+  .glow-button {
+    background-color: transparent;
+    color: #f0f0f0;
+    border-radius: 10px;
   }
-}
+
+  .glow-button:hover {
+    color: #ffffff;
+    border-radius: 10px;
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    box-shadow: 0 0 15px rgb(51, 129, 212);
+    text-shadow: 0 0 5px #f0f0f0;
+    background-color: rgba(51, 129, 212, 0.5);
+  }
+
+  @keyframes glow {
+    0% {
+      filter: drop-shadow(0 0 35px#3380d4);
+    }
+    100% {
+      filter: drop-shadow(0 0 35px #3380d4);
+    }
+  }
 </style>

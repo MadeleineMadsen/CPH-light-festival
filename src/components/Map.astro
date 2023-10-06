@@ -1,0 +1,127 @@
+<div id="maps"></div>
+
+<style>
+  #maps {
+    width: auto;
+    height: 450px;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 8px;
+    border: solid 2px rgb(51, 129, 212);
+  }
+  /* Desktop version */
+  @media (min-width: 700px) {
+    #maps {
+      margin-left: 10cqw;
+      margin-right: 10cqw;
+    }
+  }
+</style>
+
+<script>
+  var markers = [];
+  var infoWindows = [];
+  var markerColors = ["http://maps.google.com/mapfiles/ms/icons/red-dot.png"];
+
+  window.onload = function () {
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById("maps"), {
+        center: new google.maps.LatLng(55.674449, 12.587966),
+        zoom: 12.5,
+        mapId: "a02be1a9267c036d",
+      });
+
+      var locations = [
+        {
+          position: new google.maps.LatLng(55.674449, 12.587966),
+          imagePath: "/img/Acid_Sun.jpg",
+          text: "Acid Sun",
+        },
+        {
+          position: new google.maps.LatLng(55.675172, 12.56867),
+          imagePath: "/img/Arachne.jpg",
+          text: "Arrachne",
+        },
+        {
+          position: new google.maps.LatLng(55.679197, 12.593772),
+          imagePath: "/img/Blue_Earth.jpg",
+          text: "Blue Earth",
+        },
+        {
+          position: new google.maps.LatLng(55.68942, 12.611104),
+          imagePath: "/img/Dreamcatcher.jpg",
+          text: "Dreamcatcher",
+        },
+        {
+          position: new google.maps.LatLng(55.671914, 12.578206),
+          imagePath: "/img/Hook-Up.jpg",
+          text: "Hook Up",
+        },
+        {
+          position: new google.maps.LatLng(55.665806, 12.575425),
+          imagePath: "/img/Love_Train.jpg",
+          text: "Love Train",
+        },
+        {
+          position: new google.maps.LatLng(55.677452, 12.590206),
+          imagePath: "/img/Terra.jpg",
+          text: "Terra",
+        },
+        {
+          position: new google.maps.LatLng(55.675983, 12.58758),
+          imagePath: "/img/Waves.jpg",
+          text: "Waves",
+        },
+        {
+          position: new google.maps.LatLng(55.650121, 12.595106),
+          imagePath: "/img/WHAT_IF.jpg",
+          text: "What If",
+        },
+      ];
+
+      for (var i = 0; i < locations.length; i++) {
+        var location = locations[i];
+        var container = document.createElement("div");
+        var imageElement = document.createElement("img");
+        imageElement.src = location.imagePath;
+        imageElement.style.width = "200px";
+
+        var textElement = document.createElement("div");
+        textElement.textContent = location.text;
+
+        textElement.style.fontWeight = "bold";
+        textElement.style.textAlign = "center";
+
+        container.appendChild(imageElement);
+        container.appendChild(textElement);
+
+        infoWindows[i] = new google.maps.InfoWindow({
+          content: container,
+        });
+
+        markers[i] = new google.maps.Marker({
+          position: location.position,
+          map: map,
+          title: "Marker " + (i + 1),
+          icon: {
+            url: markerColors[i % markerColors.length],
+          },
+        });
+
+        markers[i].addListener(
+          "click",
+          (function (index) {
+            return function () {
+              infoWindows[index].open(map, markers[index]);
+            };
+          })(i)
+        );
+      }
+    }
+    initMap();
+  };
+</script>
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1E-qXbiPM-iIPD6RE_VW-7u8B2ovD3h0&callback=initMap"
+  async></script>
