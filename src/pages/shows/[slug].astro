@@ -1,5 +1,7 @@
 ---
 import "../../style/style.css";
+import Nav from "../../components/Nav.astro"
+import Footer from "../../components/Footer.astro"
 export async function getStaticPaths() {
   const data = await fetch(
     "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/cph_lf",
@@ -32,8 +34,7 @@ console.log(myData);
     <title>Document</title>
   </head>
   <body>
-    <!-- Kode til glow-knapper -->
-    <a href="#" class="button glow-button">Glow Button</a>
+    <Nav/>  
 
     <main>
       <img class="billede" src=` ../img/${myData.image}` ; alt={myData.image} />
@@ -57,6 +58,7 @@ console.log(myData);
         <p class="where">{myData.where};</p>
       </div>
     </section>
+    <Footer/>
   </body>
 </html>
 
