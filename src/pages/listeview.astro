@@ -1,4 +1,6 @@
 ---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 import "../style/style.css";
 const data = await fetch(
   "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/cph_lf?select=titel,image,id,intro",
@@ -18,12 +20,14 @@ console.log(data);
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=poppins"
+      rel="stylesheet"
+    />
     <title>Listeview</title>
   </head>
   <body>
-    <!-- Kode til glow-knapper -->
-    <a href="#" class="button glow-button">Glow Button</a>
+    <Nav />
 
     <main>
       <div class="grid-container">
@@ -45,6 +49,8 @@ console.log(data);
           </div>
         </template>
       </div>
+
+      <Footer />
     </main>
   </body>
 </html>
@@ -144,51 +150,3 @@ console.log(data);
     }
   }
 </style>
-
-<!-- <script>
-  // Definér URL til API-endepunktet med select-parameteren
-  const url =
-    "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/cph_lf?select=titel,image,id,intro";
-
-  // Definér API-nøgle
-  const key =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0";
-  // Udfør en GET-anmodning til API-endepunktet med API-nøglen som en header
-  fetch(
-    "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/cph_lf?select=titel,image,id,intro",
-    {
-      method: "GET",
-      headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0",
-      },
-    }
-  )
-    .then((res) => res.json())
-    .then((data) => showProducts(data));
-
-  // Vis produkterne i consol
-  function showProducts(products) {
-    // Looper og  kald showProduct for hver
-    products.forEach(showProduct);
-  }
-
-  function showProduct(product) {
-    console.table(product);
-    // fang template
-    const template = document.querySelector("#smallProductTemplate").content;
-    // lav en kopi
-    const copy = template.cloneNode(true);
-
-    // ændre indhold
-    copy.querySelector(".navn").textContent = product.titel;
-    copy.querySelector(".text").textContent = product.intro;
-    copy.querySelector(".kort-billede").src = product.image;
-    copy
-      .querySelector("a")
-      .setAttribute("href", `/singleview?id=${product.id}`);
-
-    // appende -   // Tilføj kopien til DOM'en
-    document.querySelector(".grid-container").appendChild(copy);
-  }
-</script> -->
