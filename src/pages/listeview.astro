@@ -50,15 +50,23 @@ const data = await fetch(
 
   /* CSS for the card container */
 
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    gap: 10px;
-  }
 
   body {
     margin-left: 0%;
     padding: 0%;
   }
+
+
+  @media screen and (max-width: 800px) {
+    a {
+      text-decoration: none;
+      color: white;}
+     
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr ;
+    align-items: center;
+    gap: 10px;
+  }
+   }
 </style>
