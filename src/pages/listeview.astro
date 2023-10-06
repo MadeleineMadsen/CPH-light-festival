@@ -1,4 +1,6 @@
 ---
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 import "../style/style.css";
 import Card from "../components/Card.astro";
 
@@ -19,10 +21,14 @@ const data = await fetch(
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=poppins"
+      rel="stylesheet"
+    />
     <title>Listeview</title>
   </head>
   <body>
+<<<<<<< HEAD
     <!-- Kode til glow-knapper -->
     <!-- <a href="#" class="button glow-button">Glow Button</a> -->
     <header></header>
@@ -34,6 +40,32 @@ const data = await fetch(
           })
         }
       </section>
+=======
+    <Nav />
+
+    <main>
+      <div class="grid-container">
+        <template id="smallProductTemplate">
+          <div class="card">
+            <img
+              class="kort-billede"
+              src="https://copenhagenlightfestival.org/wp-content/uploads/2023/02/Riff-Raff-Reff.jpg"
+              alt=""
+            />
+            <h2 class="navn">RIFF RAFF REF</h2>
+            <p class="text">
+              Arthur van der Zaag's unique lighting event with Light Creatures
+              on Refshaleøen, plus "Dancing on Water
+            </p>
+            <button> <a href="/singleview">Read more</a></button>
+
+            <ol></ol>
+          </div>
+        </template>
+      </div>
+
+      <Footer />
+>>>>>>> engelsk
     </main>
   </body>
 </html>
@@ -58,51 +90,3 @@ const data = await fetch(
     padding: 0%;
   }
 </style>
-
-<!-- <script>
-  // Definér URL til API-endepunktet med select-parameteren
-  const url =
-    "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/cph_lf?select=titel,image,id,intro";
-
-  // Definér API-nøgle
-  const key =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0";
-  // Udfør en GET-anmodning til API-endepunktet med API-nøglen som en header
-  fetch(
-    "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/cph_lf?select=titel,image,id,intro",
-    {
-      method: "GET",
-      headers: {
-        apikey:
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0",
-      },
-    }
-  )
-    .then((res) => res.json())
-    .then((data) => showProducts(data));
-
-  // Vis produkterne i consol
-  function showProducts(products) {
-    // Looper og  kald showProduct for hver
-    products.forEach(showProduct);
-  }
-
-  function showProduct(product) {
-    console.table(product);
-    // fang template
-    const template = document.querySelector("#smallProductTemplate").content;
-    // lav en kopi
-    const copy = template.cloneNode(true);
-
-    // ændre indhold
-    copy.querySelector(".navn").textContent = product.titel;
-    copy.querySelector(".text").textContent = product.intro;
-    copy.querySelector(".kort-billede").src = product.image;
-    copy
-      .querySelector("a")
-      .setAttribute("href", `/singleview?id=${product.id}`);
-
-    // appende -   // Tilføj kopien til DOM'en
-    document.querySelector(".grid-container").appendChild(copy);
-  }
-</script> -->

@@ -1,37 +1,42 @@
 ---
-import "../style/style.css"
+import "../style/style.css";
 import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import GlowBtn from "../components/GlowBtn.astro";
 import Dropdown from "../components/Dropdown.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
   <head>
-    <link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=poppins"
+      rel="stylesheet"
+    />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>FAQ</title>
   </head>
   <body>
+    <Nav />
 
-    <Nav/>
+    <div class="blur-box">
+      <div class="blur-content">
+        <h1>FAQ</h1>
+        <p>
+          Jeg har brug for tekst så jeg skriver en sang: Solen er rød, natten er
+          blå, jeg står på stylter, og kan ikke spå. Min nabo larmer dag og nat,
+          jeg råber at jeg hader deres kat. En tur udenfor er det bedste jeg
+          ved, katten løber rundt, skal den lige køres ned? Gåturen blev til
+          løb, politiet finder mig ikke, nu leder naboen efter katten, råber
+          "hvor er Rikke?"
+        </p>
+      </div>
+    </div>
 
-<div class="blur-box">
-    <div class="blur-content">
-    <h1>FAQ</h1>
-    <p>Jeg har brug for tekst så jeg skriver en sang: Solen er rød, natten er blå, jeg står på stylter, og kan ikke spå. Min nabo larmer dag og nat, jeg råber at jeg hader deres kat. En tur udenfor er det bedste jeg ved, katten løber rundt, skal den lige køres ned? Gåturen blev til løb, politiet finder mig ikke, nu leder naboen efter katten, råber "hvor er Rikke?"</p>
-</div></div>
+    <Dropdown />
 
-
-
-
-
-<Dropdown/>
-
-<Footer/>
-
+    <Footer />
   </body>
 </html>
