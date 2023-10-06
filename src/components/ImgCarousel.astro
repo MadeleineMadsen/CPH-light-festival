@@ -2,7 +2,7 @@
 
 ---
 
-<!-- Html -->
+<!-- HTML -->
 <section class="image-carousel">
     <div class="carousel-container">
       <div class="carousel-track">
@@ -37,7 +37,7 @@
           </div>
 
           <div class="carousel-slide" id="slide2">
-            <img src="/img/Terra.jpg" alt="Image 8"/>
+            <img src="/img/Terra-1.jpg" alt="Image 8"/>
           </div>
 
           <div class="carousel-slide" id="slide2">
@@ -54,14 +54,16 @@
     <button class="next">Næste</button>
   </section>
 
-  <!-- Style -->
+  <!-- Styling -->
+
   <style>
+/* Mobil view */
 img {
     max-width: 100%;
 }
 
 .image-carousel {
-  max-width: 800px;
+  max-width: 1300px;
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -77,17 +79,58 @@ img {
 }
 
 .carousel-slide {
-  min-width: 22.5%;
+  min-width: 45.5%;
   padding: 10px;
 }
 
 button {
-    background-color: lightblue;
-    border: none;
+    background-color: #3B507C;
     color:white;
+    border: #3B507C;
+    border-radius: 20px;
+    padding: 8px;
 }
 button:disabled {
-    background-color: hotpink;
+    background-color: rgba(8, 9, 22, 0.34);
+}
+
+/* Desktop view */
+@media (min-width: 800px) {
+img {
+    max-width: 100%;
+}
+
+.image-carousel {
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 23.5%;
+  padding: 10px;
+}
+
+button {
+    background-color: #3B507C;
+    color:white;
+    border: #3B507C;
+    border-radius: 20px;
+    padding: 8px;
+}
+button:disabled {
+    background-color: rgba(8, 9, 22, 0.34);
+}
 }
 </style>
 
