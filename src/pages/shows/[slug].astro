@@ -1,0 +1,196 @@
+---
+import "../../style/style.css";
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/cph_lf",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0",
+      },
+    }
+  ).then((response) => response.json());
+
+  return data.map((show) => {
+    return {
+      params: { slug: show.slug },
+      props: { myData: show },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Kode til glow-knapper -->
+    <a href="#" class="button glow-button">Glow Button</a>
+
+    <main>
+      <img class="billede" src=` ../img/${myData.image}` ; alt={myData.image} />
+    </main>
+
+    <section class="container">
+      <div class="description">
+        <h1>{myData.titel}</h1>
+        <p class="tekst">
+          {myData.description}
+        </p>
+      </div>
+      <div class="info">
+        <h2><br />WHO</h2>
+
+        <p>
+          {myData.who}
+        </p>
+        <h2><br />WHERE</h2>
+
+        <p class="where">{myData.where};</p>
+      </div>
+    </section>
+  </body>
+</html>
+
+<style>
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px;
+  }
+
+  .billede {
+    height: 500px;
+    width: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Center horizontally */
+    padding: 0;
+  }
+
+  img {
+    height: 500px;
+    width: 900px;
+  }
+
+  .description {
+    padding: 10px;
+    text-align: justify;
+    width: 470px;
+  }
+
+  .info {
+    text-align: justify;
+    background-color: #3f4f79;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0px;
+    padding: 10px;
+    padding-top: 0%;
+    color: white;
+    height: 302px;
+    width: 375px;
+  }
+
+  .info p {
+    text-align: justify;
+    margin: 0%;
+    padding: 10px;
+  }
+  .tekst {
+    text-align: justify;
+    margin: 0%;
+    padding: 10px;
+    line-height: 1.5;
+  }
+  .info h2 {
+    text-align: justify;
+    margin: 0%;
+    padding: 5px;
+  }
+
+  @media screen and (max-width: 800px) {
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      height: 200px;
+      width: 400px;
+    }
+    .billede {
+      height: 200px;
+      width: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; /* Center horizontally */
+      padding: 0;
+    }
+
+    .description {
+      display: grid;
+      justify-content: center;
+      padding: 10px;
+      text-align: justify;
+      width: 365px;
+      grid-template-columns: 1fr;
+    }
+    .description h1 {
+      display: flex;
+      justify-content: center;
+    }
+
+    .info {
+      text-align: justify;
+      background-color: #3f4f79;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-left: 7px;
+      padding: 10px;
+      padding-top: 0%;
+      color: white;
+      height: 285px;
+      width: 350px;
+    }
+
+    .info p {
+      text-align: justify;
+      margin: 0%;
+      padding: 3px;
+    }
+    .tekst {
+      text-align: justify;
+      margin: 0%;
+      padding: 10px;
+      line-height: 1.5;
+      display: flex;
+      justify-content: center;
+    }
+    .info h2 {
+      text-align: justify;
+      margin: 0%;
+      padding: 5px;
+    }
+  }
+</style>
