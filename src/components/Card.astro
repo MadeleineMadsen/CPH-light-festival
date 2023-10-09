@@ -4,11 +4,11 @@ console.log(data);
 ---
 
 <div class="card">
-  <img class="kort-billede" src=`img/${data.image}` ; alt={data.imageAlt} />
+  <img class="kort-billede" src=`/img/${data.image}` ; alt={data.imageAlt} />
   <h2 class="navn">{data.titel}</h2>
   <p class="text">
     {data.intro}
-  </p><a href={`shows/${data.slug}`}>
+  </p><a href={`/shows/${data.slug}`}>
     <button class="card-button"> Read more</button><a></a>
     <ol></ol>
   </a>
