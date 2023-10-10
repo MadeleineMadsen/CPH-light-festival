@@ -1,201 +1,205 @@
 ---
-
+import "../style/style.css";
+import GlowBtn from "../components/GlowBtn.astro";
 ---
 
 <!-- HTML -->
 <section class="image-carousel">
-    <div class="carousel-container">
-      <div class="carousel-track">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <!-- Billeder til karrusel -->
+      <div class="carousel-slide" id="slide1">
+        <img src="/img/Acid_Sun.webp" alt="Image 1" />
+      </div>
 
-        <!-- Billeder til karrusel -->
-        <div class="carousel-slide" id="slide1">
-          <img src="/img/Acid_Sun.webp" alt="Image 1" />
-        </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Arachne.webp" alt="Image 2" />
+      </div>
 
-        <div class="carousel-slide" id="slide2">
-          <img src="/img/Arachne.webp" alt="Image 2"/>
-        </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Blue_Earth.webp" alt="Image 3" />
+      </div>
 
-        <div class="carousel-slide" id="slide2">
-            <img src="/img/Blue_Earth.webp" alt="Image 3"/>
-          </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Blue_Earth2.webp" alt="Image 4" />
+      </div>
 
-          <div class="carousel-slide" id="slide2">
-            <img src="/img/Blue_Earth2.webp" alt="Image 4"/>
-          </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Dreamcatcher.webp" alt="Image 5" />
+      </div>
 
-          <div class="carousel-slide" id="slide2">
-            <img src="/img/Dreamcatcher.webp" alt="Image 5"/>
-          </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Hook-Up.webp" alt="Image 6" />
+      </div>
 
-          <div class="carousel-slide" id="slide2">
-            <img src="/img/Hook-Up.webp" alt="Image 6"/>
-          </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Love_Train.webp" alt="Image 7" />
+      </div>
 
-          <div class="carousel-slide" id="slide2">
-            <img src="/img/Love_Train.webp" alt="Image 7"/>
-          </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Terra-1.webp" alt="Image 8" />
+      </div>
 
-          <div class="carousel-slide" id="slide2">
-            <img src="/img/Terra-1.webp" alt="Image 8"/>
-          </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/Waves.webp" alt="Image 9" />
+      </div>
 
-          <div class="carousel-slide" id="slide2">
-            <img src="/img/Waves.webp" alt="Image 9"/>
-          </div>
-
-          <div class="carousel-slide" id="slide2">
-            <img src="/img/WHAT_IF.webp" alt="Image 10"/>
-          </div>
+      <div class="carousel-slide" id="slide2">
+        <img src="/img/WHAT_IF.webp" alt="Image 10" />
       </div>
     </div>
+  </div>
 
-    <button class="prev">Back</button>
-    <button class="next">Next</button>
-    <button class="Exhibitions">Exhibitions</button>
-  </section>
+  <button class="prev button glow-button">Back</button>
+  <button class="next button glow-button">Next</button>
+  <button class="Exhibitions button glow-button">Exhibitions</button>
+</section>
 
-  <!-- Styling -->
+<!-- Styling -->
 
-  <style>
-/* Mobil view */
-img {
+<style>
+  /* Mobil view */
+  img {
     max-width: 100%;
-}
+  }
 
-.image-carousel {
-  max-width: 1300px;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-}
+  .image-carousel {
+    max-width: 1300px;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+  }
 
-.carousel-container {
-  display: flex;
-}
+  .carousel-container {
+    display: flex;
+  }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-}
+  .carousel-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
 
-.carousel-slide {
-  min-width: 45.5%;
-  padding: 10px;
-}
+  .carousel-slide {
+    min-width: 45.5%;
+    padding: 10px;
+  }
 
-button {
-    background-color: #3B507C;
-    color:white;
-    border: #3B507C;
+  button {
+    background-color: #3b507c;
+    color: white;
+    border: #3b507c;
     border-radius: 20px;
     padding: 8px;
-}
-button:disabled {
+  }
+  button:disabled {
     background-color: rgba(8, 9, 22, 0.34);
-}
+  }
 
-/* Desktop view */
-@media (min-width: 800px) {
-img {
-    max-width: 100%;
-}
+  /* Desktop view */
+  @media (min-width: 800px) {
+    img {
+      max-width: 100%;
+    }
 
-.image-carousel {
-  max-width: 1300px;
-  margin: auto;
-  position: relative;
-  overflow: hidden;
-}
+    .glow-button:hover {
+      color: #ffffff;
+      animation-name: glow;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      box-shadow: 0 0 15px rgb(51, 129, 212);
+      text-shadow: 0 0 5px #f0f0f0;
+      cursor: pointer;
+    }
+    .image-carousel {
+      max-width: 1300px;
+      margin: auto;
+      position: relative;
+      overflow: hidden;
+    }
 
-.carousel-container {
-  display: flex;
-}
+    .carousel-container {
+      display: flex;
+    }
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.3s ease-in-out;
-}
+    .carousel-track {
+      display: flex;
+      transition: transform 0.3s ease-in-out;
+    }
 
-.carousel-slide {
-  min-width: 23.5%;
-  padding: 10px;
-}
+    .carousel-slide {
+      min-width: 23.5%;
+      padding: 10px;
+    }
 
-button {
-    background-color: #3B507C;
-    color:white;
-    border: #3B507C;
-    border-radius: 20px;
-    padding: 8px;
-}
-button:disabled {
-    background-color: rgba(8, 9, 22, 0.34);
-}
+    button {
+      background-color: #3b507c;
+      color: white;
+      border: #3b507c;
+      border-radius: 20px;
+      padding: 8px;
+    }
+    button:disabled {
+      background-color: rgba(8, 9, 22, 0.34);
+    }
 
-.Exhibitions {
-  background-color: rgb(255, 71, 89);
-  margin-left: 1118px;
-}
-}
+    .Exhibitions {
+      background-color: rgb(255, 71, 89);
+      margin-left: 1118px;
+    }
+  }
 </style>
 
-
 <!-- JavaScript -->
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM content loaded');
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM content loaded");
 
-  const track = document.querySelector('.carousel-track');
-  console.log(track);
-  const slides = document.querySelectorAll('.carousel-slide');
+    const track = document.querySelector(".carousel-track");
+    console.log(track);
+    const slides = document.querySelectorAll(".carousel-slide");
 
-  let index = 0;
+    let index = 0;
 
-  function updateSlide() {
-    track.style.transform = `translateX(-${index * 25}%)`;
-    // Prev knappen bliver disabled, når slides er slut
-    if(index == 0){
-        document.querySelector(".prev").disabled=true
-    } else {
-        document.querySelector(".prev").disabled=false
+    function updateSlide() {
+      track.style.transform = `translateX(-${index * 25}%)`;
+      // Prev knappen bliver disabled, når slides er slut
+      if (index == 0) {
+        document.querySelector(".prev").disabled = true;
+      } else {
+        document.querySelector(".prev").disabled = false;
+      }
+
+      // Next knappen bliver disabled, når slides er slut
+      if (index == slides.length - 4) {
+        document.querySelector(".next").disabled = true;
+      } else {
+        document.querySelector(".next").disabled = false;
+      }
     }
 
-    // Next knappen bliver disabled, når slides er slut
-    if(index == slides.length -4){
-        document.querySelector(".next").disabled=true
-    } else {
-        document.querySelector(".next").disabled=false
-    }
-  }
+    updateSlide();
 
-  updateSlide()
-
-//   Næste og forrige slide
-  function nextSlide() {
-    console.log(index, slides.length)
-    if(index+1 < slides.length-3){
+    //   Næste og forrige slide
+    function nextSlide() {
+      console.log(index, slides.length);
+      if (index + 1 < slides.length - 3) {
         index++;
+      }
+
+      updateSlide();
     }
 
-    updateSlide();
-  }
+    function prevSlide() {
+      if (index - 1 >= 0) {
+        index--;
+      }
 
-  function prevSlide() {
-    if(index-1 >= 0){
-        index--
+      updateSlide();
     }
 
-    updateSlide();
-  }
+    //   Funktionerne næste og forrige knapper
+    document.querySelector(".next").addEventListener("click", nextSlide);
 
-//   Funktionerne næste og forrige knapper
-  document.querySelector(".next").addEventListener("click", nextSlide)
-
-  document.querySelector(".prev").addEventListener("click", prevSlide)
-});
+    document.querySelector(".prev").addEventListener("click", prevSlide);
+  });
 </script>
-  
-
-
-  
