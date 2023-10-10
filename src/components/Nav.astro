@@ -1,17 +1,17 @@
 ---
-
+import "../style/style.css";
+import GlowBtn from "../components/GlowBtn.astro";
 ---
 
-<!-- HTML -->
-<!-- Navigationsmenu -->
+<!-- HTML --><!-- Navigationsmenu -->
 <header>
   <nav>
     <a href="/"><img class="logo" src="/img/logo2.png" alt="logo" /></a>
 
     <ul>
-      <li><a href="/listeview">Exhibitions</a></li>
-      <li><a href="/maps">Map</a></li>
-      <li><a href="/faq">FAQ</a></li>
+      <li><a href="/listeview" class="button glow-button">Exhibitions</a></li>
+      <li><a href="/maps" class="button glow-button">Map</a></li>
+      <li><a href="/faq" class="button glow-button">FAQ</a></li>
     </ul>
   </nav>
 </header>
@@ -19,56 +19,62 @@
 <!-- Styling -->
 
 <style>
-/* Mobil view */
-nav {
-  display: flex;
-  align-items: center;
-  background-image: linear-gradient(black, rgba(0, 0, 0, 0));
-}
+  /* Mobil view */
+  nav {
+    display: flex;
+    align-items: center;
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0));
+  }
 
-.logo {
-  max-width: 180px;
-}
+  .logo {
+    max-width: 180px;
+  }
 
-/* Burgermenu */
+  /* Burgermenu */
 
+  /* Desktop view */
+  @media (min-width: 800px) {
+    nav {
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(black, rgba(0, 0, 0, 0));
+    }
 
+    .logo {
+      max-width: 180px;
+      margin-left: 55px;
+    }
 
+    ul {
+      display: flex;
+      gap: 20rem;
+      margin-left: auto;
+      padding-right: 6cqw;
+      list-style-type: none;
+    }
 
+    li {
+      display: inline-block;
+      text-align: right;
+      letter-spacing: 1px;
+      list-style-type: none;
+    }
 
-/* Desktop view */
-@media (min-width: 800px) {
-nav {
-  display: flex;
-  align-items: center;
-  background-image: linear-gradient(black, rgba(0, 0, 0, 0));
-}
-
-.logo {
-  max-width: 180px;
-  margin-left: 55px;
-}
-
-ul {
-  display: flex;
-  gap: 20rem;
-  margin-left: auto;
-  padding-right: 6cqw;
-  list-style-type: none;
-}
-
-li {
-  display: inline-block;
-  text-align: right;
-  letter-spacing: 1px;
-  list-style-type: none;
-}
-
-li a {
-  font-family:;
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-}
-}
+    li a {
+      font-family:;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+    }
+    .glow-button:hover {
+      color: #ffffff;
+      border-radius: 10px;
+      animation-name: glow;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      box-shadow: 0 0 15px rgb(51, 129, 212);
+      text-shadow: 0 0 5px #f0f0f0;
+      background-color: rgba(51, 129, 212, 0.5);
+    }
+  }
 </style>
