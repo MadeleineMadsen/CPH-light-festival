@@ -1,4 +1,5 @@
 ---
+import GlowBtn from "../components/GlowBtn.astro";
 ---
 
 <!-- HTML --><!-- Navigationsmenu -->
@@ -12,9 +13,11 @@
       <span class="bar"></span>
     </div>
     <ul class="main-menu">
-      <li class="nav-item"><a href="/listeview">Exhibitions</a></li>
-      <li class="nav-item"><a href="/maps">Map</a></li>
-      <li class="nav-item"><a href="/faq">FAQ</a></li>
+      <li class="nav-item button glow-button">
+        <a href="/listeview">Exhibitions</a>
+      </li>
+      <li class="nav-item button glow-button"><a href="/maps">Map</a></li>
+      <li class="nav-item button glow-button"><a href="/faq">FAQ</a></li>
     </ul>
   </nav>
 </header>
@@ -99,7 +102,16 @@
       align-items: center;
       background-image: linear-gradient(black, rgba(0, 0, 0, 0));
     }
-
+    .glow-button:hover {
+      color: #ffffff;
+      border-radius: 10px;
+      animation-name: glow;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      box-shadow: 0 0 15px rgb(51, 129, 212);
+      text-shadow: 0 0 5px #f0f0f0;
+      background-color: rgba(51, 129, 212, 0.5);
+    }
     .logo {
       max-width: 180px;
       margin-left: 55px;
@@ -121,7 +133,7 @@
     }
 
     li a {
-      font-family: ;
+      font-family:;
       font-size: 18px;
       color: white;
       text-decoration: none;
