@@ -1,17 +1,15 @@
 ---
-import "../style/style.css";
-import GlowBtn from "../components/GlowBtn.astro";
 ---
 
 <!-- HTML --><!-- Navigationsmenu -->
 <header>
-  <nav>
+  <nav class="menu-wrapper">
     <a href="/"><img class="logo" src="/img/logo2.png" alt="logo" /></a>
 
     <ul>
-      <li><a href="/listeview" class="button glow-button">Exhibitions</a></li>
-      <li><a href="/maps" class="button glow-button">Map</a></li>
-      <li><a href="/faq" class="button glow-button">FAQ</a></li>
+      <li><a href="/listeview">Exhibitions</a></li>
+      <li><a href="/maps">Map</a></li>
+      <li><a href="/faq">FAQ</a></li>
     </ul>
   </nav>
 </header>
@@ -20,11 +18,68 @@ import GlowBtn from "../components/GlowBtn.astro";
 
 <style>
   /* Mobil view */
-  nav {
-    display: flex;
-    align-items: center;
-    background-image: linear-gradient(black, rgba(0, 0, 0, 0));
-  }
+  @media (max-width: 800px) {
+    .menu-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center; /* Vertically center the logo and menu on mobile */
+      gap: 20px; /* Add space between the logo and menu on desktop */
+      justify-content: space-between;
+      margin: 15px;
+    }
+    .hamburger {
+      display: block; /* Show the hamburger icon on mobile */
+      cursor: pointer;
+    }
+    .nav-item {
+      margin: 16px 0;
+    }
+
+    .main-menu {
+      display: none; /* Hide the menu by default on mobile */
+    }
+
+    .main-menu.active {
+      display: block; /* Show the menu when the "active" class is added */
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 150px;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      z-index: -2;
+      margin-top: 0%;
+      gap: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: white;
+      z-index: 10;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
 
   .logo {
     max-width: 180px;
@@ -61,20 +116,27 @@ import GlowBtn from "../components/GlowBtn.astro";
     }
 
     li a {
-      font-family:;
+      font-family: ;
       font-size: 18px;
       color: white;
       text-decoration: none;
     }
-    .glow-button:hover {
-      color: #ffffff;
-      border-radius: 10px;
-      animation-name: glow;
-      animation-duration: 2s;
-      animation-iteration-count: infinite;
-      box-shadow: 0 0 15px rgb(51, 129, 212);
-      text-shadow: 0 0 5px #f0f0f0;
-      background-color: rgba(51, 129, 212, 0.5);
-    }
   }
 </style>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".main-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Close the menu when a link is clicked
+  document.querySelectorAll(".main-menu li a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+</script>
