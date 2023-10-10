@@ -169,8 +169,19 @@ import GlowBtn from "../components/GlowBtn.astro";
 
     let index = 0;
 
+    let translate = 0;
+
     function updateSlide() {
-      track.style.transform = `translateX(-${index * 25}%)`;
+
+      if(screen.width >= 800) {
+        translate = 25;
+      }
+      else {
+        translate = 51;
+      }
+
+      track.style.transform = `translateX(-${index * translate}%)`;
+      
       // Prev knappen bliver disabled, når slides er slut
       if (index == 0) {
         document.querySelector(".prev").disabled = true;
