@@ -18,11 +18,68 @@
 
 <style>
   /* Mobil view */
-  nav {
-    display: flex;
-    align-items: center;
-    background-image: linear-gradient(black, rgba(0, 0, 0, 0));
-  }
+  @media (max-width: 800px) {
+    .menu-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center; /* Vertically center the logo and menu on mobile */
+      gap: 20px; /* Add space between the logo and menu on desktop */
+      justify-content: space-between;
+      margin: 15px;
+    }
+    .hamburger {
+      display: block; /* Show the hamburger icon on mobile */
+      cursor: pointer;
+    }
+    .nav-item {
+      margin: 16px 0;
+    }
+
+    .main-menu {
+      display: none; /* Hide the menu by default on mobile */
+    }
+
+    .main-menu.active {
+      display: block; /* Show the menu when the "active" class is added */
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 150px;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      z-index: -2;
+      margin-top: 0%;
+      gap: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: white;
+      z-index: 10;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
 
   .logo {
     max-width: 180px;
