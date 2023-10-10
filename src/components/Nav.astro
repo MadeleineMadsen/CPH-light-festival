@@ -1,17 +1,20 @@
 ---
-
 ---
 
-<!-- HTML -->
-<!-- Navigationsmenu -->
+<!-- HTML --><!-- Navigationsmenu -->
 <header>
-  <nav>
+  <nav class="menu-wrapper">
     <a href="/"><img class="logo" src="/img/logo2.png" alt="logo" /></a>
 
-    <ul>
-      <li><a href="/listeview">Exhibitions</a></li>
-      <li><a href="/maps">Map</a></li>
-      <li><a href="/faq">FAQ</a></li>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <ul class="main-menu">
+      <li class="nav-item"><a href="/listeview">Exhibitions</a></li>
+      <li class="nav-item"><a href="/maps">Map</a></li>
+      <li class="nav-item"><a href="/faq">FAQ</a></li>
     </ul>
   </nav>
 </header>
@@ -19,56 +22,124 @@
 <!-- Styling -->
 
 <style>
-/* Mobil view */
-nav {
-  display: flex;
-  align-items: center;
-  background-image: linear-gradient(black, rgba(0, 0, 0, 0));
-}
+  /* Mobil view */
+  @media (max-width: 800px) {
+    .menu-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center; /* Vertically center the logo and menu on mobile */
+      gap: 20px; /* Add space between the logo and menu on desktop */
+      justify-content: space-between;
+      margin: 15px;
+    }
+    .hamburger {
+      display: block; /* Show the hamburger icon on mobile */
+      cursor: pointer;
+    }
+    .nav-item {
+      margin: 16px 0;
+    }
 
-.logo {
-  max-width: 180px;
-}
+    .main-menu {
+      display: none; /* Hide the menu by default on mobile */
+    }
 
-/* Burgermenu */
+    .main-menu.active {
+      display: block; /* Show the menu when the "active" class is added */
+      position: fixed;
+      left: 0;
+      top: 0;
+      height: 150px;
+      background-color: black;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+      z-index: -2;
+      margin-top: 0%;
+      gap: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: white;
+    }
 
+    .bar {
+      display: block;
+      width: 25px;
+      height: 3px;
+      margin: 5px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: white;
+      z-index: 10;
+    }
 
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
 
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
 
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
 
-/* Desktop view */
-@media (min-width: 800px) {
-nav {
-  display: flex;
-  align-items: center;
-  background-image: linear-gradient(black, rgba(0, 0, 0, 0));
-}
+    .logo {
+      max-width: 180px;
+    }
+  }
+  /* Desktop view */
+  @media (min-width: 800px) {
+    nav {
+      display: flex;
+      align-items: center;
+      background-image: linear-gradient(black, rgba(0, 0, 0, 0));
+    }
 
-.logo {
-  max-width: 180px;
-  margin-left: 55px;
-}
+    .logo {
+      max-width: 180px;
+      margin-left: 55px;
+    }
 
-ul {
-  display: flex;
-  gap: 20rem;
-  margin-left: auto;
-  padding-right: 6cqw;
-  list-style-type: none;
-}
+    ul {
+      display: flex;
+      gap: 20rem;
+      margin-left: auto;
+      padding-right: 6cqw;
+      list-style-type: none;
+    }
 
-li {
-  display: inline-block;
-  text-align: right;
-  letter-spacing: 1px;
-  list-style-type: none;
-}
+    li {
+      display: inline-block;
+      text-align: right;
+      letter-spacing: 1px;
+      list-style-type: none;
+    }
 
-li a {
-  font-family:;
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-}
-}
+    li a {
+      font-family: ;
+      font-size: 18px;
+      color: white;
+      text-decoration: none;
+    }
+  }
 </style>
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".main-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  // Close the menu when a link is clicked
+  document.querySelectorAll(".main-menu li a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    });
+  });
+</script>
