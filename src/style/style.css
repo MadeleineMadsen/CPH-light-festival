@@ -68,9 +68,6 @@ h4 {
     margin-left: 10cqw;
     margin-right: 10cqw;
   }
-  header {
-    position: fixed;
-  }
 
   /* Billede karrusel */
   .splide__slide img {
