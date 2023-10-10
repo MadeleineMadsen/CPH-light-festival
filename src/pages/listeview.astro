@@ -16,7 +16,7 @@ const data = await fetch(
 ).then((res) => res.json());
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
@@ -45,28 +45,36 @@ const data = await fetch(
   .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
     gap: 10px;
+    margin: 0 auto;
+    padding: auto;
+    justify-content: center;
+    max-width: 800px;
   }
 
   /* CSS for the card container */
 
-
   body {
-    margin-left: 0%;
-    padding: 0%;
+    margin: auto;
+    padding: auto;
   }
-
 
   @media screen and (max-width: 800px) {
     a {
       text-decoration: none;
-      color: white;}
-     
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr ;
-    align-items: center;
-    gap: 10px;
+      color: white;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 10px;
+      margin: 0 auto;
+      padding: auto;
+      justify-content: center;
+      max-width: 800px;
+    }
   }
-   }
 </style>
