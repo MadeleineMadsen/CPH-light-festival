@@ -3,10 +3,11 @@ import ImgCarousel from "../components/ImgCarousel.astro";
 import Nav from "../components/Nav.astro";
 import TekstForside from "../components/TekstForside.astro";
 import Footer from "../components/Footer.astro";
+import ForsideBillede from "../components/ForsideBillede.astro";
 import "../style/style.css";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="da">
   <head>
     <meta charset="UTF-8" />
@@ -21,6 +22,8 @@ import "../style/style.css";
   <body>
     <Nav />
     <main>
+      <ForsideBillede />
+
       <ImgCarousel />
 
       <TekstForside />

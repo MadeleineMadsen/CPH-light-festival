@@ -53,7 +53,9 @@ import GlowBtn from "../components/GlowBtn.astro";
   <button class="prev button glow-button">Back</button>
   <button class="next button glow-button">Next</button>
 
-<a href="/listeview"><button class="Exhibitions button glow-button">Exhibitions</button></a>
+  <a href="/listeview"
+    ><button class="Exhibitions button glow-button">Exhibitions</button></a
+  >
 </section>
 
 <!-- Styling -->
@@ -91,15 +93,16 @@ import GlowBtn from "../components/GlowBtn.astro";
     border: #3b507c;
     border-radius: 20px;
     padding: 8px;
+    cursor: pointer;
   }
   button:disabled {
     background-color: rgba(8, 9, 22, 0.34);
   }
 
   .Exhibitions {
-  background-color: rgb(255, 71, 89);
-  margin-left: 180px;
-}
+    background-color: rgb(255, 71, 89);
+    margin-left: 180px;
+  }
 
   /* Desktop view */
   @media (min-width: 800px) {
@@ -172,16 +175,14 @@ import GlowBtn from "../components/GlowBtn.astro";
     let translate = 0;
 
     function updateSlide() {
-
-      if(screen.width >= 800) {
+      if (screen.width >= 800) {
         translate = 25;
-      }
-      else {
+      } else {
         translate = 51;
       }
 
       track.style.transform = `translateX(-${index * translate}%)`;
-      
+
       // Prev knappen bliver disabled, når slides er slut
       if (index == 0) {
         document.querySelector(".prev").disabled = true;
