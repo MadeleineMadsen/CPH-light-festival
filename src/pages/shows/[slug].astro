@@ -38,26 +38,26 @@ console.log(myData);
 
     <main>
       <img class="billede" src=`/img/${myData.image}` ; alt={myData.image} />
+
+      <section class="container">
+        <div class="description">
+          <h1>{myData.titel}</h1>
+          <p class="tekst">
+            {myData.description}
+          </p>
+        </div>
+        <div class="info">
+          <h2><br />WHO</h2>
+
+          <p>
+            {myData.who}
+          </p>
+          <h2><br />WHERE</h2>
+
+          <p class="where">{myData.where}</p>
+        </div>
+      </section>
     </main>
-
-    <section class="container">
-      <div class="description">
-        <h1>{myData.titel}</h1>
-        <p class="tekst">
-          {myData.description}
-        </p>
-      </div>
-      <div class="info">
-        <h2><br />WHO</h2>
-
-        <p>
-          {myData.who}
-        </p>
-        <h2><br />WHERE</h2>
-
-        <p class="where">{myData.where}</p>
-      </div>
-    </section>
     <Footer />
   </body>
 </html>
