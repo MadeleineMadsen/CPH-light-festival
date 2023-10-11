@@ -7,9 +7,11 @@ console.log(data);
   <img class="kort-billede" src=`/img/${data.image}` ; alt={data.imageAlt} />
   <!-- <div class="card-content"> -->
   <h2 class="navn">{data.titel}</h2>
-  <p class="text">
+  <div class="text-box">
+    <p class="text">
     {data.intro}
-  </p><a href={`/shows/${data.slug}`}>
+    </p>
+  </div><a href={`/shows/${data.slug}`}>
     <button class="card-button"> Read more</button><a></a>
     <ol></ol>
   </a>
@@ -17,6 +19,10 @@ console.log(data);
 </div>
 
   <style>
+
+    .text-box{
+      height: 150px;
+    }
     .card-content{
       padding: 20px;
 

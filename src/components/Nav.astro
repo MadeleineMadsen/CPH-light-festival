@@ -28,16 +28,22 @@ import GlowBtn from "../components/GlowBtn.astro";
   /* Mobil view */
   @media (max-width: 800px) {
     .menu-wrapper {
+      position: fixed;
       display: flex;
       flex-direction: row;
       align-items: center; /* Vertically center the logo and menu on mobile */
       gap: 20px; /* Add space between the logo and menu on desktop */
       justify-content: space-between;
-      margin: 15px;
+      /* margin: 15px; */
+      width: 100%;
+      z-index: 99;
     }
     .hamburger {
       display: block; /* Show the hamburger icon on mobile */
       cursor: pointer;
+      z-index: 9;
+      margin-right: 8px;
+
     }
     .nav-item {
       margin: 16px 0;
@@ -48,22 +54,28 @@ import GlowBtn from "../components/GlowBtn.astro";
     }
 
     .main-menu.active {
-      display: block; /* Show the menu when the "active" class is added */
-      position: fixed;
-      left: 0;
-      top: 0;
-      height: 150px;
+      display: flex; /* Show the menu when the "active" class is added */
+      flex-direction: column;
+      position: relative;
+      /* height: 60px; */
+      /* margin: 10px; */
+      /* left: 0;
+      top: 0; */
+      /* height: 150px; */
       background-color: black;
-      width: 100%;
+      /* max-width: 100%; */
       text-align: center;
+      position: absolute;
       transition: 0.3s;
-
       margin-top: 0%;
-      gap: 10px;
+      width: 100vw;
+      top: 0%;
+      
     }
     a {
       text-decoration: none;
-      color: white;
+      color: white;¨
+      margin: 0;
     }
 
     .bar {
@@ -91,6 +103,17 @@ import GlowBtn from "../components/GlowBtn.astro";
 
     .logo {
       max-width: 180px;
+    }
+    .glow-button:hover {
+      color: #ffffff;
+      border-radius: 10px;
+      animation-name: glow;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      box-shadow: 0 0 15px rgb(51, 129, 212);
+      text-shadow: 0 0 5px #f0f0f0;
+      background-color: rgba(51, 129, 212, 0.5);
+      list-style: none;
     }
   }
   /* Burgermenu */

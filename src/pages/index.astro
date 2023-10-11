@@ -1,9 +1,9 @@
 ---
-import ImgCarousel from "../components/ImgCarousel.astro"
+import ImgCarousel from "../components/ImgCarousel.astro";
 import Nav from "../components/Nav.astro";
 import TekstForside from "../components/TekstForside.astro";
 import Footer from "../components/Footer.astro";
-import "../style/style.css"
+import "../style/style.css";
 ---
 
 <!DOCTYPE html>
@@ -11,19 +11,20 @@ import "../style/style.css"
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=poppins"
+      rel="stylesheet"
+    />
     <title>Forside</title>
   </head>
 
   <body>
+    <Nav />
+    <main>
+      <ImgCarousel />
 
- <Nav/>  
- 
-<ImgCarousel/>
-
-<TekstForside/>
-
-<Footer/>
-
+      <TekstForside />
+    </main>
+    <Footer />
   </body>
 </html>

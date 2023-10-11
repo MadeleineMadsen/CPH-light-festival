@@ -5,7 +5,7 @@ import Footer from "../components/Footer.astro";
 import Map from "../components/Map.astro";
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="da">
   <head>
     <link
@@ -18,21 +18,21 @@ import Map from "../components/Map.astro";
   </head>
   <body>
     <Nav />
-
-    <div class="blur-box">
-      <div class="blur-content">
-        <h1>Maps</h1>
-        <p>
-          The exhibitions are placed all around Copenhagen with pre-planned
-          routes from 2,5 km to 9 km. By following the routes you´ll see as many
-          exhibitions as possible. You are also free to make your own route by
-          looking at our map and look for your favourite exhibit.
-        </p>
+    <main>
+      <div class="blur-box">
+        <div class="blur-content">
+          <h1>Maps</h1>
+          <p>
+            The exhibitions are placed all around Copenhagen with pre-planned
+            routes from 2,5 km to 9 km. By following the routes you´ll see as
+            many exhibitions as possible. You are also free to make your own
+            route by looking at our map and look for your favourite exhibit.
+          </p>
+        </div>
       </div>
-    </div>
 
-    <Map />
-
+      <Map />
+    </main>
     <Footer />
   </body>
 </html>

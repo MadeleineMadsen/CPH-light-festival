@@ -39,6 +39,12 @@ h4 {
   padding-bottom: 20px;
 }
 
+/* mobile */
+@media (max-width: 700px) {
+  main {
+    padding-top: 150px;
+  }
+}
 /* Desktop version */
 @media (min-width: 700px) {
   footer {
